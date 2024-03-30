@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabheader</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/tabheader.css" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="tab-header">
+        <button  class="tablink" onclick="openCity('hotel', this, '#0995f9')" id="defaultOpen">Hotel</button>
+        <button  class="tablink" onclick="openCity('car', this, '#0995f9')">Car</button>
+        <button  class="tablink" onclick="openCity('tour', this, '#0995f9')">Tour</button>
+        <div id="hotel" class="section" >
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="booking-form">
+                            <form>
+                                <div class="row no-margin">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <span class="form-label">Destination</span>
+                                            <input class="form-control" type="text" placeholder="Country, ZIP, city...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row no-margin">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <span class="form-label">Check-In</span>
+                                                    <input class="form-control" type="date" required> 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <span class="form-label">Check-Out</span>
+                                                    <input class="form-control" type="date" required> 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <span class="form-label">Guests</span>
+                                                    <select class="form-control">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>More</option>
+                                                    </select>
+                                                    <span class="select-arrow"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-btn">
+                                            <button class="submit-btn">Search Hotel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+     <div id="car" class="section" >
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="booking-form">
+                            <form>
+                                <div class="row no-margin">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <span class="form-label">Pickup Location</span>
+                                            <input class="form-control" type="text" placeholder="location">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row no-margin">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <span class="form-label">Drop Location</span>
+                                                    <input class="form-control" type="text" placeholder="location">       
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <span class="form-label">Pick-Drop Time</span>
+                                                    <input class="form-control" type="time" required>
+                            <input class="form-control" type="time" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <span class="form-label">Guests</span>
+                                                    <select class="form-control">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                    </select>
+                                                    <span class="select-arrow"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-btn">
+                                            <button class="submit-btn">Search car</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div id="tour" class="section" >
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="booking-form">
+                            <form>
+                                <div class="row no-margin">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <span class="form-label">Destination</span>
+                                            <input class="form-control" type="text" placeholder="where are you going? ">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row no-margin">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <span class="form-label">From-To</span>
+                                                    <input class="form-control" type="date" required> 
+                            <input class="form-control" type="date" required> 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <span class="form-label">Price</span>
+                                                    <input class="form-control" type="text" placeholder="₹0-₹100.. ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <span class="form-label">Guests</span>
+                                                    <select class="form-control">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                    </select>
+                                                    <span class="select-arrow"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-btn">
+                                            <button class="submit-btn">Search Tour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function openCity(cityName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("section");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  
+  }
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+    </script>
+</html>

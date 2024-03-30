@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/dialog.css">
+</head>
+<body>
+	<div class="action">
+		<div class="profile" onclick="menuToggle();">
+		  <img src="images/profile.webp" />
+		</div>
+		<div class="menu">
+		  <h3>Hello <%= name %><br /><span><%= email %></span></h3>
+		  <ul>
+			<li>
+			  <img src="images/user.png" /><a href="#">My profile</a>
+			</li>
+			<li>
+			  <img src="images/edit.png" /><a href="/for">Edit profile</a>
+			</li>
+			<li>
+			  <img src="images/setting.png" /><a href="#">Setting</a>
+			</li>
+			<li>
+				<img src="images/support.png" /><a href="contactus">Support</a>
+			  </li>
+			<li>
+			  <img src="images/logout.png" /><a href="/logout">Logout</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+</body>
+<script>
+	function menuToggle() {
+        const toggleMenu = document.querySelector(".menu");
+        toggleMenu.classList.toggle("active");
+      }
+</script>
+</html>

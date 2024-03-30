@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+</head>
+<body>
+    <style>
+        
+        label{
+            display: block;
+        }
+    </style>
+    <form >
+        <h1>LOG IN</h1>
+        <hr>
+        <label for="uName"><b>Username</b></label>
+        <input id="uName" type="text" placeholder="Username" name="Username" required>
+        <label for="email"><b>Email</b></label>
+        <input id="email" type="email" placeholder="Enter email" name="email" required>
+        <label for="psw"><b>Password</b></label>
+        <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
+        <!-- /*<label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>*/ -->
+          <button id="btn" type="submit">Sign Up</button>
+      </div>
+    </form>
+    <p id="demo"></p>
+</body>
+
+<script>
+    var username=document.getElementById("uName");
+    var email=document.getElementById("email");
+    var password=document.getElementById("pass");
+    const btn=document.getElementById("btn");
+    console.log(btn);
+    var req=new XMLHttpRequest();
+    console.log(req);
+    req.onreadystatechange=function(){
+        if(this.readyState==4 && this.status==200){
+            console.log("signed up");
+        }
+    };
+    btn.addEventListener("click",function (){
+    req.open("POST","/postData");
+    req.setRequestHeader("Content-Type","application/json");
+    event.preventDefault();
+    let user={
+        username:uName.value,
+       email:email.value,
+      Password:pass.value
+    }
+    let userJson=JSON.stringify(user);
+    req.send(userJson);
+    console.log(userJson);
+    });
+</script>
+</html>

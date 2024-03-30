@@ -1,0 +1,1157 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito+Sans&family=Orbitron:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito+Sans&family=Roboto+Slab:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+:root {
+    --font-style:'Nunito Sans', sans-serif;
+    --transition: all 0.7s ease;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+    box-sizing: border-box;
+    background:transparent;
+    font-family: 'Poppins',sans-serif;
+  }
+
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 100px;
+    
+}
+.bgimg{
+  position: absolute;
+  top:0px;
+  left:0;
+  width: 100%;
+  height:700px;
+  object-fit:cover
+}
+/*---LOGO STYLING---*/
+header .logo{
+    top: 0px;
+    position: relative;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+.logo_img{
+  width: 10%;
+  height: 10%;
+  object-fit: cover;
+  display: inline;
+}
+/*---navbar---*/
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 200px;
+  background: inherit;
+}
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.nav .logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+.nav .nav-links {
+  font-size: 20px;
+  column-gap: 20px;
+  list-style: none;
+}
+.nav .nav-links li a::after {
+  display: block;
+  content: "";
+  width:0;
+  height: 3px;
+  background-color: #fff;
+  margin: auto;
+}
+.nav .nav-links li a:hover::after{
+  width: 100%;
+  transition: width 0.3s linear;
+}
+.nav .nav-links a {
+  transition: all 0.2s linear;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav .search-icon {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+.nav .search-box {
+  position: absolute;
+  right: 250px;
+  height: 52px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  left: 15px;
+  color: #4a98f7;
+  transform: translateY(-50%);
+}
+.search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 0 15px 0 45px;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+/* responsive */
+@media screen and (max-width: 1160px) {
+  .nav {
+    padding: 15px 100px;
+  }
+  .nav .search-box {
+    right: 150px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .nav {
+    padding: 15px 50px;
+  }
+  .nav .search-box {
+    right: 100px;
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: block;
+  }
+  .nav {
+    padding: 15px 20px;
+  }
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    font-size: 18px;
+    align-items:flex-start;
+    padding-left: 50px;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 30px;
+    flex-direction: column;
+    background-color: rgba(1, 105, 180, 0.705);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 100;
+  }
+  .nav.openNav .nav-links {
+    left: 0;
+  }
+  .nav .navOpenBtn {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .nav .navCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .search-box {
+    top: calc(100% + 10px);
+    max-width: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+/*---account drop down---*/
+.dropdown {
+  position: relative;
+  border-radius: 6px;
+}
+
+.dropdown > button {
+  position: relative;
+  z-index: 0;
+  transition: 0.3s;
+}
+
+.dropdown > button:hover {
+  background: #0a82d5;
+}
+
+.dropdown.open > button {
+  background: #fff;
+  color:#0a82d5
+}
+
+.dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 5px;
+  width: 180px;
+  height: 52px;
+  font-size: 16px;
+  border-radius: 6px;
+  border:2px solid #fff;
+  color: #fff;
+  background:inherit;
+  cursor: pointer;
+  font-family: "Euclid Circular A";
+}
+ .name{
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.dropdown button .chevron {
+  margin-left: auto;
+}
+
+.menu {
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 155px;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 6px;
+  border-top: 0;
+  border:2px solid #ededed;
+  background: #fff;
+  color:#383838;
+  translate: 0 -20px;
+  transition: 0.4s;
+}
+
+.main-menu {
+  width: 180px;
+}
+
+.menu-inner {
+  position: absolute;
+  width: 460px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.menu-inner.open {
+  translate: -50%;
+}
+
+.menu button {
+  border: 0;
+  width: 100%;
+  height: 50px;
+  border-radius: 0;
+  color:#383838;
+}
+
+.menu button:hover {
+  background: #fafafa;
+}
+
+.dropdown.open .menu {
+  opacity: 1;
+  translate: 0;
+  visibility: visible;
+}
+
+.sub-menu {
+  display: none;
+  width:180px;
+  margin-left: 50px;
+}
+
+.sub-menu.open {
+  display: block;
+}
+
+/*---WISH STYLING---*/
+.section-one .subheader .clock{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  z-index: 100;
+}
+.subheader{
+  margin-top: 11%;
+  display: flex;
+  position: relative;
+  margin-left: 72.5%;
+}
+.wish p{
+  color:#fff;
+  font-weight: 900;
+  font-family: 'Roboto Slab';
+  font-size: 50px;
+  -webkit-box-reflect: below -10px
+  linear-gradient(transparent,rgba(0,0,0,0.40));
+}
+.helloImg img {
+  margin-bottom:100px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  -webkit-box-reflect: below -5px
+  linear-gradient(transparent,rgba(0,0,0,0.40));
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  /* five values can be played with to make the waving more or less */
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/*---CLOCK STYLING---*/
+.clock {
+  margin-left: 72%;
+  display: flex; 
+  position: absolute;
+  gap: 1rem;
+  justify-content: center;
+  border-radius: 20px;
+  background: inherit;
+  width: 450px;
+  height: auto;
+  z-index: 100;
+  margin-top:-2%;
+}
+.hour,.sec,.min,.colon {
+  font-family:'Orbitron';
+  font-size: 2rem;
+  font-weight: bold;
+  color:#fff;
+  font-weight: bold;
+}
+.ampm{
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  margin:auto;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 6px solid #fff;
+  border-radius: 10px;
+  width: 500px;
+  height: 75px;
+}
+.colon {
+  margin-bottom: auto;
+}
+.title{
+  font-size: 1.4rem;
+  color: #fff;
+  -webkit-text-stroke:none;
+  margin-top:-5px;
+  font-family: 'Poppins',sans-serif;
+}
+/*---CAROUSEL MAKING---*/
+.gallery {
+  --d: 10s;
+  /* duration */
+  display: grid;
+  width: 450px;
+  align-items: center;
+  margin-left: 40%;
+  margin-top: 19%;
+  margin-bottom: 6%;
+
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 20px solid #f2f2f2;
+  box-shadow: 0 0 20px rgba(0,0,0,0.20);
+  animation: slide var(--d) infinite;
+  border-radius:15px;
+}
+.gallery img:last-child {
+  animation-name: slide-last;
+}
+.gallery > img:nth-child(1) {
+  animation-delay: calc(0*var(--d));
+  --r: 18deg;
+}
+.gallery > img:nth-child(2) {
+  animation-delay: calc(-0.2*var(--d));
+  --r: 7deg;
+}
+.gallery > img:nth-child(3) {
+  animation-delay: calc(-0.4*var(--d));
+  --r: -15deg;
+}
+.gallery > img:nth-child(4) {
+  animation-delay: calc(-0.6*var(--d));
+  --r: 5deg;
+}
+.gallery > img:nth-child(5) {
+  animation-delay: calc(-0.8*var(--d));
+  --r: 6deg;
+}
+@keyframes slide {
+  0%, 100%, 80.01% {
+    transform: translateX(0%) rotate(var(--r));
+    z-index: 3;
+  }
+  10% {
+    transform: translateX(120%) rotate(var(--r));
+    z-index: 3;
+  }
+  10.01% {
+    transform: translateX(120%) rotate(var(--r));
+    z-index: -3;
+  }
+  20%, 80% {
+    transform: translateX(0%) rotate(var(--r));
+    z-index: -3;
+  }
+}
+@keyframes slide-last {
+  0%, 100%, 90.01% {
+    transform: translateX(0%) rotate(var(--r));
+    z-index: 3;
+  }
+  10% {
+    transform: translateX(120%) rotate(var(--r));
+    z-index: 3;
+  }
+  10.01% {
+    transform: translateX(120%) rotate(var(--r));
+    z-index: -3;
+  }
+  20%, 90% {
+    transform: translateX(0%) rotate(var(--r));
+    z-index: -3;
+  }
+}
+/*---FLIP-CARD STYLING---*/
+/* Main heading for card's front cover */
+.card-front__heading {
+  font-size: 2rem;
+  margin-top: .25rem;
+}
+
+/* Main heading for inside page */
+.inside-page__heading { 
+  padding-bottom: 0rem; 
+  width: 100%;
+}
+
+/* Mixed */
+
+/* For both inside page's main heading and 'view me' text on card front cover */
+.inside-page__heading,
+.card-front__text-view {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-top: .2rem;
+}
+.inside-page__heading--city,
+.card-front__text-view--city { color: #035781; }
+
+.inside-page__heading--ski,
+.card-front__text-view--ski { color: #035781; }
+
+.inside-page__heading--beach,
+.card-front__text-view--beach { color: #035781; }
+
+.inside-page__heading--camping,
+.card-front__text-view--camping { color: #035781; }
+
+/* Front cover */
+
+.card-front__tp { color: #fafbfa; }
+
+/* For pricing text on card front cover */
+.card-front__text-price {
+  font-size: 1.2rem;
+  margin-top: .2rem;
+}
+/* For inside page's body text */
+.inside-page__text {
+  color: #333;
+  padding: .3rem;
+  font-size: 1.4rem;
+
+}
+/* Buttons =================================================*/
+.inside-page__btn {
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: .5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: all .3s ease;
+  width:15rem;
+  z-index: 10;
+}
+
+.inside-page__btn::before { 
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleY(0);
+  transition: all .3s ease;
+  width: 100%;
+  z-index: -1;
+}
+
+.inside-page__btn--city { 
+  border-color: #00394f;
+  color: #00394f;
+}
+
+.inside-page__btn--city::before { 
+  background-color: #00394f;
+}
+
+.inside-page__btn--ski { 
+  border-color: #00394f;
+  color: #00394f;
+}
+
+.inside-page__btn--ski::before { 
+  background-color: #00394f;
+}
+
+.inside-page__btn--beach { 
+  border-color: #00394f;
+  color: #00394f;
+}
+
+.inside-page__btn--beach::before { 
+  background-color: #00394f;
+}
+
+.inside-page__btn--camping { 
+  border-color: #00394f;
+  color: #00394f;
+}
+
+.inside-page__btn--camping::before { 
+  background-color: #00394f;
+}
+
+.inside-page__btn:hover { 
+  color: #fafbfa;
+}
+
+.inside-page__btn:hover::before { 
+  transform: scaleY(1);
+}
+
+/* Layout Structure=========================================*/
+
+.main {
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 300px;
+  width: 96.5%;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 30px;
+  margin-right:30px;
+  
+}
+
+/* Container to hold all cards in one place */
+.card-area {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Card ============================================*/
+
+/* Area to hold an individual card */
+.card-section {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  margin: 20px;
+}
+
+/* A container to hold the flip card and the inside page */
+.Card {
+  box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.8),-.1rem 1.7rem 6.6rem -3.2rem rgba(255,255,255,0.8);
+  height: 20rem;
+  position: relative;
+  transition: all 1s ease;
+  width: 15rem;
+  margin: 35px;
+}
+
+/* Flip card - covering both the front and inside front page */
+
+/* An outer container to hold the flip card. This excludes the inside page */
+.flip-card {
+  height: 20rem;
+  perspective: 100rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  visibility: hidden;
+  width: 20rem;
+  z-index: 100;
+}
+
+/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
+/* This is done so content in the inside page can be selected */
+.flip-card > * {
+  visibility: visible;
+}
+
+/* An inner container to hold the flip card. This excludes the inside page */
+.flip-card__container {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Styling for the front side of the flip card */
+
+/* container for the front side */
+.card-front{
+  background-color: #fafbfa;
+  height: 20rem;
+  width: 20rem;
+}
+
+/* Front side's top section */
+.card-front__tp {
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
+  display: flex;
+  flex-direction: column;
+  height: 15rem;
+  justify-content: center;
+  padding: .75rem;
+}
+
+.card-front__tp--city {
+  background: linear-gradient(
+    to bottom,
+    #035781,
+    #00394f
+  );
+}
+
+.card-front__tp--ski {
+  background: linear-gradient(
+    to bottom,
+     #035781,
+    #00394f
+  );
+}
+
+.card-front__tp--beach {
+  background: linear-gradient(
+    to bottom,
+    #035781,
+    #00394f
+  );
+}
+
+.card-front__tp--camping {
+  background: linear-gradient(
+    to bottom,
+    #035781,
+    #00394f
+  );
+}
+
+/* Front card's bottom section */
+.card-front__bt {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styling for the back side of the flip card */
+
+.card-back {
+  background-color: #fafbfa;
+  transform: rotateY(180deg);
+}
+
+/* Specifically targeting the <video> element */
+.video__container {
+  clip-rule: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Inside page */
+
+.inside-page {
+  background-color: #fafbfa;
+  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0,0,0,0.25);
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  width: 20rem;
+  z-index: 1;
+}
+
+.inside-page__container {
+  align-items: center;
+  display: flex;
+  flex-direction:column;
+  height: 100%;
+  text-align: center; 
+  width: 100%;
+}
+
+/* Functionality ====================================*/
+
+/* This is to keep the card centered (within its container) when opened */
+.Card:hover {
+  box-shadow:
+  -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.75);
+  width: 30rem;
+}
+
+/* When the card is hovered, the flip card container will rotate */
+.Card:hover .flip-card__container {
+  transform: rotateY(-180deg);
+}
+
+/* When the card is hovered, the shadow on the inside page will shrink to the left */
+.Card:hover .inside-page {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0,0,0,0.1);
+}
+/*---POPULAR DESTINATION HEADING STYLING---*/
+#popDest {
+    background-color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:100px;
+    margin-top: 10px;
+}
+.wave{
+  position: relative;
+  font-size:50px;
+  -webkit-box-reflect: below -40px
+  linear-gradient(transparent,rgba(0,0,0,0.2));
+}
+.wave span{
+  font-family: "Alfa Slab One", cursive;
+  position: relative;
+  display: inline-block;
+  color:#151719;
+  text-transform: uppercase;
+  animation: wavy 1s infinite;
+  animation-delay: calc(0.1s * var(--item));
+}
+@keyframes wavy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20%{
+    transform: translateY(-20px);
+  }
+}
+#wave{
+  margin-left: 60px;
+}
+/*---POPULAR DESTINATION COLLAGES---*/
+.Container {
+    position: relative;
+    width: 100%;
+    margin-left:30px;
+    margin-top:20px;
+  }
+  
+  .image {
+    display: block;
+    width: 90%;
+    height: 90%;
+    border: 20px solid #ffffff;
+    border-radius: 15px;
+    box-shadow: 10px 10px 22px  #bebebe, -10px -10px 22px  #ffffff;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 10;
+    background: rgba(238, 233, 233, 0.486); ;
+    overflow: hidden;
+    width: 0;
+    height: 80%;
+    transition: .5s ease;
+    text-align: center;
+    padding-top:30px ;
+  }
+  .Container:hover .overlay {
+    width: 80%;
+    height: 75%;
+    position:absolute;
+    left:20px;
+    top:20px;
+  }
+  .overlaySlide{
+    background: transparent;
+    padding:30px;
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0px;
+  }
+  /*---LUXURY HOTELS---*/
+  #popHot{
+    background-color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:100px;
+    margin-top: 10px;
+  }
+  .hotel{
+    display: flex;
+    margin-left: 100px;
+  }
+  /*---SLIDER CAROUSEL---*/
+  #slider
+  h2,
+  p {
+    margin: 30px 0 0;
+    padding: 0;
+  }
+  p {
+    color: #072f5f;
+  }
+  .slider {
+    margin-left:30px;
+    margin-right: 30px;
+    width: 80%;
+    margin: 35px auto;
+    background: linear-gradient(to right,#ffffff , #ffffff);
+    border-radius: 5px;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  }
+  
+  .slick-slider button {
+    position: absolute;
+    top: 50%;
+    background: #fff;
+    border: none;
+    outline: none;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    color: transparent;
+    cursor: pointer;
+    transform: translate(0%, -70%);
+    border-radius: 36px;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.07);
+  }
+  .slick-slider .slick-prev {
+    left: -30px;
+  }
+  .slick-slider .slick-prev::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f104";
+    font-size: 30px;
+    color: #072f5f;
+    left: 8px;
+    position: relative;
+    z-index: 10;
+  }
+  .slick-slider .slick-next {
+    right: -30px;
+  }
+  .slick-slider .slick-next::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-size: 30px;
+    color: #072f5f;
+    right: 15px;
+    position: relative;
+    z-index: 10;
+  }
+  .slick-slide {
+    color: #333;
+    padding: 40px 0;
+    font-size: 1.25em;
+    font-family: "Verdana";
+    text-align: center;
+    pointer-events: none;
+  }
+  
+  .slick-slide .desc {
+    opacity: 0;
+  }
+  
+  .slick-slide .desc > * {
+    transition: all 900ms ease;
+  }
+  
+  .slick-slide .desc h2 {
+    position: relative;
+    left: 50px;
+    line-height: 1;
+  }
+  .slick-slide .desc h2 span {
+    color: #bcdee7;
+  }
+  .slick-slide .desc p {
+    position: relative;
+    top: 50px;
+    opacity: 0;
+  }
+  
+  .slick-slide img {
+    width: 100%;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+  }
+  .slick-dots {
+    text-align: center;
+  }
+  
+  .slick-dots li {
+    display: inline-block;
+    padding: 1px;
+    background: #ccc;
+    margin: 10px 5px;
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .slick-dots li.slick-active {
+    background: #072f5f;
+  }
+  
+  .slick-dots button {
+    display: none;
+  }
+  .slick-slide {
+    opacity: 0.2;
+    transition: all 300ms ease;
+  }
+  
+  .slick-current {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  .slick-current .desc {
+    opacity: 1;
+  }
+  
+  .slick-current .desc h2 {
+    left: 0;
+  }
+  
+  .slick-current .desc p {
+    top: 0;
+    opacity: 1;
+  }
+  
+  .btn {
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 2px solid #072f5f;
+    text-decoration: none;
+    color: #072f5f;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    display: block;
+    margin: 30px auto 0;
+    max-width: 150px;
+    width: 100%;
+    font-weight: bold;
+    pointer-events: initial;
+  }
+/*---POPULAR CITIES---*/
+  .popCit {
+    background-color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:100px;
+    margin-top: 10px;
+}
+.left img{
+  width:20%;
+  margin-left: 4%;
+  display: block;
+  float: left;
+  margin-top:0;
+
+}
+article {
+  float: right;
+  margin-right:20px ;
+  padding: 20px;
+  width: 50%;
+  background-color: #f1f1f1;
+  height: 200px; /* only for demonstration, should be removed */
+}
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+table {
+  margin-top:40px ;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  height: 250px;
+  float: left;
+  margin-right: 80px;
+  margin-left: 80px;
+}
+
+td ,th{
+  border: 2px solid white;
+  text-align:center;
+  padding: 15px;
+}
+
+.cTable img{
+  float: right;
+  width: 35%;
+  margin-top: 10px;
+  margin-right: 60px;
+  padding-left:10px ;
+}

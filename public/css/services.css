@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+  }
+  
+  body {
+    background: #F5F5F5;
+  }
+  .services-container {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+
+  }
+  .services {
+    background: #F5F5F5;
+    height:0px;
+    margin-top:270px;
+    margin-bottom: 60px;
+  }
+  
+  .services .cards {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: -230px;
+  }
+  
+  .services .cards .card {
+    background: #FFFFFF;
+    max-width: 25%;
+    min-width: 250px;
+    height: 250px;
+    text-align: center;
+    margin-right: 20px;
+    padding: 70px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, -webkit-transform 0.4s ease, -webkit-box-shadow 0.4s ease;
+  }
+  
+  .services .cards .card:hover {
+    box-shadow: 0px 1px 9px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .services .cards .card:last-child {
+    margin-right: 0;
+  }
+  
+  .services .cards .card i.fas, .services .cards .card i.far {
+    font-size: 4em;
+    color: transparent;
+    -webkit-text-stroke: 3px #0169B4;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .services .cards .card h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #444444;
+  }
+  
+  .services .cards .card p {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #adadad;
+  }

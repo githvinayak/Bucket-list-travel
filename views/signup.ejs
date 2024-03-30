@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">  
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#form1" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/signup',
+					data: $('#form1').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('#form1')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					//ADD THIS CODE
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="You are regestered,You can login now.") {
+								document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+	  <nav class="nav">
+		<i class="uil uil-bars navOpenBtn"></i>
+		<a href="/" class="logo">Bucket List Travel</a>
+	
+		<ul class="nav-links">
+		  <i class="uil uil-times navCloseBtn"></i>
+		  <li><a href="/">Home</a></li>
+		  <li><a href="tour">Tours</a></li>
+		  <li><a href="hotel">Hotels</a></li>
+		  <li><a href="service">Services</a></li>
+		  <li><a href="contactus">Contact Us</a></li>
+		  <li><a href="login">Log In</a></li>
+		</ul>
+	
+		<i class="uil uil-search search-icon" id="searchIcon"></i>
+		<div class="search-box">
+		  <i class="uil uil-search search-icon"></i>
+		  <input type="text" placeholder="Search here..." />
+		</div>
+	  </nav>
+	</header>
+	<div class="signupFrm">
+		<form method="post" class="form" id="form1">
+		  <h1 class="title">Sign up</h1>
+		  <div class="mssg bg-danger"><span id="check"></span></div>
+		  <div class="inputContainer">
+			<input type="email" name="email" class="input" placeholder="a"  required="">
+			<label for="" class="label">Email</label>
+		  </div>
+	
+		  <div class="inputContainer">
+			<input type="text" name="username" class="input" placeholder="a"  required="">
+			<label for="" class="label">Username</label>
+		  </div>	
+		  <div class="inputContainer">
+			<input type="password" name="password" class="input" placeholder="a"  required="">
+			<label for="" class="label">Password</label>
+		  </div>
+		  <div class="inputContainer">
+			<input type="password" name="passwordConf" class="input" placeholder="a"  required="">
+			<label for="" class="label">Confirm Password</label>
+		  </div>
+		  <div id="LangTable"><a href="login" id="aa"></a></div>
+		  <span class="next">Already Registered! <a href="/login">Login</a></span>
+		  <input type="submit" class="submitBtn" value="Sign up">
+		</form>
+	  </div>
+</body>
+<script>
+	const nav = document.querySelector(".nav"),
+	searchIcon = document.querySelector("#searchIcon"),
+	navOpenBtn = document.querySelector(".navOpenBtn"),
+	navCloseBtn = document.querySelector(".navCloseBtn");
+	
+	searchIcon.addEventListener("click", () => {
+	nav.classList.toggle("openSearch");
+	nav.classList.remove("openNav");
+	if (nav.classList.contains("openSearch")) {
+	return searchIcon.classList.replace("uil-search", "uil-times");
+	}
+	searchIcon.classList.replace("uil-times", "uil-search");
+	});
+	
+	navOpenBtn.addEventListener("click", () => {
+	nav.classList.add("openNav");
+	nav.classList.remove("openSearch");
+	searchIcon.classList.replace("uil-times", "uil-search");
+	});
+	navCloseBtn.addEventListener("click", () => {
+	nav.classList.remove("openNav");
+	});
+	/*---dropdown---*/
+	const handleDropdownClicked = (event) => {
+	event.stopPropagation();
+	const dropdown = document.getElementById("dropdown");
+	toggleDropdown(!dropdown?.classList?.contains("open"));
+	};
+	
+	const handleSubMenuClicked = (menu) => {
+	if (menu) {
+	const subMenus = document.getElementsByClassName("sub-menu");
+	for (let s of subMenus) {
+	  s.classList.remove("open");
+	}
+	const subMenu = document.getElementById(menu);
+	subMenu.classList.add("open");
+	}
+	
+	const mainMenu = document.getElementById("menu-inner");
+	mainMenu.classList.toggle("open");
+	};
+	
+	const toggleDropdown = () => {
+	const dropdown = document.getElementById("dropdown");
+	dropdown.classList.toggle("open");
+	};
+	</script>
+</html>
+<!--<div class="mssg"><span id="check"></span></div>
+<span>Already Registered! <a href="/login">Login</a></span>-->

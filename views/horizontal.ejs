@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/horizontal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+</head>
+<body>
+  <div class="row" id="example">
+    <div class="col-xs-12 col-sm-6 contents2" id="block-1">
+      <div class="wrap">
+        <ul class="prPhoto" id="gallery">
+          <li>
+            <img src="https://i.pinimg.com/236x/fb/39/ea/fb39ea1195823595e1339ca82e7fd962.jpg" title=""/>
+          </li>
+          <li>
+           <img src="https://i.pinimg.com/236x/fb/39/ea/fb39ea1195823595e1339ca82e7fd962.jpg" title=""/>
+          </li>
+          <li>
+            <img src="https://i.pinimg.com/236x/fb/39/ea/fb39ea1195823595e1339ca82e7fd962.jpg" title=""/>
+          </li>
+          <li>
+            <img src="https://i.pinimg.com/236x/fb/39/ea/fb39ea1195823595e1339ca82e7fd962.jpg" title=""/>
+          </li>
+        </ul>
+        <div id="bx-pager" class="hidden-xs">
+          <a data-slide-index="0" href=""> <img src="https://i.pinimg.com/236x/fb/39/ea/fb39ea1195823595e1339ca82e7fd962.jpg" title=""/></a>
+          <a data-slide-index="1" href=""> <img src="https://i.pinimg.com/236x/fb/39/ea/fb39ea1195823595e1339ca82e7fd962.jpg" title=""/></a>
+          <a data-slide-index="2" href=""> <img src="https://i.pinimg.com/236x/fb/39/ea/fb39ea1195823595e1339ca82e7fd962.jpg" title=""/></a>
+          <a data-slide-index="3" href=""> <img src="https://i.pinimg.com/236x/fb/39/ea/fb39ea1195823595e1339ca82e7fd962.jpg" title=""/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+</body>
+<script>
+   $(document).ready(function(){  
+		$('.prPhoto').bxSlider({
+			pagerCustom: '#bx-pager',
+			mode: 'fade', 
+			speed: 1700, 
+			slideMargin: 0, 
+			startSlide: 0,
+			infiniteLoop: 'true',
+			hideControlOnEnd: 'true',
+			touchEnabled: 'false',
+			slideWidth: 300, 
+			auto: 'true',
+		});      
+		$('#gallery').photobox('a',{
+			loop: false 
+		});       
+});
+</script>
+</html>

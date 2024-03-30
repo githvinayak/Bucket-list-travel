@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+    --transition: all 0.7s ease;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* footer */
+.footer{
+    background: var(--light);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 0.5rem 1rem rgba(17 17 17 / 15%) ;
+    font-family: 'Playfair Display', serif;
+}
+.footer-container{
+    width: 85vw;
+    margin: 0 auto;
+    padding-top:30px;
+    font-family: 'Playfair Display', serif;
+}
+.footer-container h2 {
+    color:black;
+    font-family: 'Playfair Display', serif;
+}
+.footer-container p{
+    color:#292826;
+}
+.footer-container p, .footer-container a, .footer-container span{
+    opacity: 0.8;
+}
+.footer a{
+    display: block;
+    color: #292826;
+    text-decoration: none;
+}
+ .share{
+    display: grid;
+    position: relative;
+    float:right;
+}
+.share ul {  
+	position:relative; 
+	left:50%;  
+	transform: translate(-50%, -50%);  
+	margin:0;  
+	padding:0;  
+	display:flex;  
+   }  
+   .share ul li {  
+	list-style: none;  
+   }  
+   .share ul li a {  
+	position: relative;  
+	width:60px;  
+	height:60px;  
+	display:block;  
+	text-align:center;  
+	margin:0 10px;  
+	border-radius: 50%;  
+	padding: 6px;  
+	box-sizing: border-box;  
+	text-decoration:none;  
+	box-shadow: 0 10px 15px rgba(0,0,0,0.3);  
+	background: linear-gradient(0deg, #ddd, #fff);  
+	transition: .5s;  
+   }  
+   .share ul li a:hover {  
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);  
+	text-decoration:none; 
+   }  
+   .share ul li a .fab {  
+	width: 100%;  
+	height:100%;  
+	display:block;  
+	background: linear-gradient(0deg, #fff, #ddd);  
+	border-radius: 50%;  
+	line-height: calc(60px - 12px);  
+	font-size:24px;  
+	color: #262626;  
+	transition: .5s;  
+   }  
+   .share ul li:nth-child(1) a:hover .fab {  
+	color: #3b5998;  
+   }  
+   .share ul li:nth-child(2) a:hover .fab {  
+	color: #00aced;  
+   }  
+   .share ul li:nth-child(3) a:hover .fab {  
+	color: #dd4b39;  
+   }  
+   .share  ul li:nth-child(4) a:hover .fab {  
+	color: #c32aa3;  
+   }  
+   .tooltipText {
+    background-color: #fff;
+    position:absolute;
+    bottom: 130%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+	font-weight: 900;
+    opacity: 0;
+    transition: all .5s;
+	margin-left: -47px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.fb {color: #3B5998;}
+.tw {color: #00aced;}
+.go {color:#dd4b39;}
+.in{color:#c32aa3;}
+.tooltipText::after {
+    content: '';
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    margin-left: 5%;
+}
+.share ul li:hover .tooltipText{
+    opacity: 1;
+    transform: translateX(-3px);
+}
+
+.contact-item span{
+    display: block;
+    color:#292826;
+}
+.contact-item span i{
+    display: block;
+    color:#0169B4;
+}
+.quick-links a i{
+    color:#0169B4
+}
+.quick-links a:hover{
+    color: #0169B4;
+}
+.quick-links :hover i{
+    padding-right: 1rem;
+}
+.divider{
+margin-block: 2.5rem;
+border: none;
+margin-left: 7%;
+margin-right: 7%;
+border-top: 2px solid #ddd;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+}
+.copyright{
+    color:#292826;
+    margin-left: 7%;
+
+}
+@media(min-width: 900px){
+    .footer-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+}
+@media(min-width: 1200px){
+    .footer{
+        text-align: left;
+    }
+    .footer-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .footer-container div:nth-child(1) p{
+        padding-right: 20px;
+    }
+    .contact-item{
+        display: grid;
+        grid-template-columns: 10% 90%;
+        margin-bottom: 15px;
+        align-items: center;
+    }
+    .share{
+        display: grid;
+        width:calc(100%-50%);
+        padding: 0 40%;
+    }
+}

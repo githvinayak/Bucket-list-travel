@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous"/>
+<link rel="stylesheet" href="css/dialog.css">
+</head>
+<body>
+	<div class="action" url="/userprofile">
+		<div class="profile" onclick="menuToggle();">
+		  <img src="images/profile.webp" />
+		</div>
+		<div class="menu">
+		  <h3>Hello<br /><span>User</span></h3>
+		  <ul>
+			<li>
+			  <img src="images/user.png" /><a onclick=" myFunction()" href="#">My profile</a>
+			</li>
+			<li>
+			  <img src="images/edit.png" /><a onclick=" myFunction()" href="#">Edit profile</a>
+			</li>
+			<li>
+			  <img src="images/setting.png" /><a onclick=" myFunction()" href="#">Setting</a>
+			</li>
+			<li>
+				<img src="images/support.png"/><a onclick=" myFunction()" href="#">Support</a>
+			  </li>
+			<li>
+			  <img src="images/logout.png" /><a onclick=" myFunction()" href="#">Logout</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+</body>
+<script>
+    function myFunction() {
+      alert("login first");
+    }
+
+	function menuToggle() {
+        const toggleMenu = document.querySelector(".menu");
+        toggleMenu.classList.toggle("active");
+      }
+    </script>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random</title>
+	<link type="text/css" rel="stylesheet" href="random.css"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	
+</head>
+<body>
+<div class="warpper">
+  <input class="radio" id="one" name="group" type="radio" checked>
+  <input class="radio" id="two" name="group" type="radio">
+  <input class="radio" id="three" name="group" type="radio">
+  <div class="tabs">
+  <label class="tab" id="one-tab" for="one">Tour</label>
+  <label class="tab" id="two-tab" for="two">Hotel</label>
+  <label class="tab" id="three-tab" for="three">Car</label>
+    </div>
+  <div class="panels">
+  <div class="panel" id="one-panel">
+    <form action="#">
+		<div class="form first">
+			<div class="details personal">
+				<div class="fields">
+					<div class="input-field">
+						<label>Your Destination</label>
+						<input type="text" placeholder="Enter destination" required>
+					</div>
+
+					<div class="input-field">
+						<label>Check In</label>
+						<input type="date" placeholder="Enter your issued date" required>
+					</div>
+
+					<div class="input-field">
+						<label>Check Out Date</label>
+						<input type="date" placeholder="Enter your issued date" required>
+					</div>
+
+					<div class="input-field">
+						<label>Tour Type</label>
+						<select required>
+							<option disabled selected>Select gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+						</select>
+					</div>
+
+					<div class="input-field">
+						<label>Children</label>
+						<select required>
+							<option disabled selected>Select gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+						</select>
+					</div>
+
+					<div class="input-field">
+						<label>Adults</label>
+						<select required>
+							<option disabled selected>Select gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+						</select>
+					</div>
+					<div class="input-field">
+						<label> Enter Name</label>
+						<input type="text" placeholder="Enter Name" required>
+					</div>
+
+					<div class="input-field">
+						<label>Enter Phone</label>
+						<input type="number" placeholder="Enter Phone" required>
+					</div>
+				</div>
+				<button class="nextBtn">
+					<span class="btnText">Book Tour</span>
+					<i class="uil uil-navigator"></i>
+				</button>
+			</div>
+		</div> 
+	</form>
+  </div>
+  <div class="panel" id="two-panel">
+    <form action="#">
+		<div class="form first">
+			<div class="details personal">
+				<div class="fields">
+					<div class="input-field">
+						<label>Your Destination</label>
+						<input type="text" placeholder="Enter destination" required>
+					</div>
+
+					<div class="input-field">
+						<label>Check In</label>
+						<input type="date" placeholder="Enter your issued date" required>
+					</div>
+
+					<div class="input-field">
+						<label>Check Out Date</label>
+						<input type="date" placeholder="Enter your issued date" required>
+					</div>
+
+					<div class="input-field">
+						<label>Rooms</label>
+						<select required>
+							<option disabled selected>Select gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+						</select>
+					</div>
+
+					<div class="input-field">
+						<label>Children</label>
+						<select required>
+							<option disabled selected>Select gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+						</select>
+					</div>
+
+					<div class="input-field">
+						<label>Adults</label>
+						<select required>
+							<option disabled selected>Select gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+						</select>
+					</div>
+					<div class="input-field">
+						<label> EnterName</label>
+						<input type="text" placeholder="Enter Name" required>
+					</div>
+
+					<div class="input-field">
+						<label>Enter Phone</label>
+						<input type="number" placeholder="Enter Phone" required>
+					</div>
+				</div>
+				<button class="nextBtn">
+					<span class="btnText">Book Hotel</span>
+					<i class="uil uil-navigator"></i>
+				</button>
+			</div>
+		</div> 
+	</form>
+  </div>
+  <div class="panel" id="three-panel">
+    <form action="#">
+		<div class="form first">
+			<div class="details personal">
+				<div class="fields">
+					<div class="input-field">
+						<label>Pickup Location</label>
+						<input type="text" placeholder="Enter location required">
+					</div>
+
+					<div class="input-field">
+						<label>Drop Location</label>
+						<input type="text" placeholder="Enter location" required>
+					</div>
+
+					<div class="input-field">
+						<label>Pickup Date</label>
+						<input type="date" placeholder="Enter your issued date" required>
+					</div>
+					<div class="input-field">
+						<label>Pickup Time</label>
+						<input type="time" placeholder="Enter your issued date" required>
+					</div>
+
+
+					<div class="input-field">
+						<label>Car Type</label>
+						<select required>
+							<option disabled selected>Select gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+						</select>
+					</div>
+
+					<div class="input-field">
+						<label>Members</label>
+						<select required>
+							<option disabled selected>Select gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+						</select>
+					</div>
+					<div class="input-field">
+						<label> EnterName</label>
+						<input type="text" placeholder="Enter Name" required>
+					</div>
+
+					<div class="input-field">
+						<label>Enter Phone</label>
+						<input type="number" placeholder="Enter Phone" required>
+					</div>
+				</div>
+				<button class="nextBtn">
+					<span class="btnText">Book Cab</span>
+					<i class="uil uil-navigator"></i>
+				</button>
+			</div>
+		</div> 
+	</form>
+  </div>
+  </div>
+</div>
+<div class="share" style="margin-left:30px;">
+	<ul>
+		<li><a href="#"><span class="tooltipText fb">Facebook</span><i class="fab fa-facebook"></i></a></li>
+		<li><a href="#"> <span class="tooltipText tw">Twitter</span><i class="fab fa-twitter"></i></a></li>
+		<li><a href="#"> <span class="tooltipText go">Google</span><i class="fab fa-google"></i></a></li>
+		<li><a href="#"> <span class="tooltipText in">Instagram</span><i class="fab fa-instagram"></i></a></li>
+	</ul>
+</div>
+
+</body>
+</html>
